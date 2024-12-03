@@ -1,4 +1,4 @@
-# Lithuania-metabar
+# Data analysis in R
 ## Metabarcoding analysis of fungi associated with roots of three plant species: _Diphasiastrum complanatum_, _Pinus sylvestris_ and _Vaccinium myrtillus_
 
 ## Load packages
@@ -28,10 +28,10 @@ library('iNEXT')
 
 ```
 
-### Reading the data
+### Reading  data
 
 ```
-#reading the data
+
 count_tab <-read.table("ASV_counts_new.txt", header=T, row.names=1, check.names=F)
 sample_info <- read.table("info.txt", header=T, row.names=1, check.names=F)
 
