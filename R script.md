@@ -1,7 +1,7 @@
 # Lithuania-metabar
 ## Metabarcoding analysis of fungi associated with roots of three plant species: _Diphasiastrum complanatum_, _Pinus sylvestris_ and _Vaccinium myrtillus_
 
-
+## Load packages
 ```
 library("phyloseq")
 library("vegan")
@@ -254,12 +254,12 @@ t1$plot_bar(bar_full = FALSE, use_alluvium = TRUE,xtext_keep = TRUE, xtext_angle
 ```
 
 
-# Heat tree
+## Heat tree
 
-## Package "metacoder"
+### Package "metacoder"
 https://grunwaldlab.github.io/metacoder_documentation/workshop--04--manipulating.html
 
-## All taxa, all samples
+### All taxa, all samples
 
 ```{r, warning =FALSE}
 
@@ -299,9 +299,9 @@ heattree<-heat_tree(obj, node_label = gsub(pattern = "\\[|\\]", replacement = ""
 plot(heattree)
 ```
 
-# Heat tree  (all ASVs, 252 taxa)
+## Heat tree  (all ASVs, 252 taxa)
 
-## Comparison of sample types
+### Comparison of sample types
 
 ```{r, warning =FALSE}
 
@@ -364,8 +364,8 @@ plot(heattree)
 #A taxon colored brown is more abundant in the species in the column and a taxon colored green is more abundant in species of the row. 
 ```
 
-# Heat tree (only abundant taxa -> easier to see the taxa)
-## Comparison of sample types
+## Heat tree (only abundant taxa -> easier to see the taxa)
+### Comparison of sample types
 
 ```{r, warning =FALSE}
 
@@ -427,7 +427,7 @@ plot(heattree)
 
 ```
 
-# iNEXT package - diversity indices
+## iNEXT package - diversity indices
 
 ```{r}
 
@@ -474,7 +474,7 @@ ggiNEXT(out, type=1, facet.var="Order.q", se = TRUE, color.var="Assemblage")
 
 
 
-## Sample completeness curve
+### Sample completeness curve
 
 ```{r}
 # Sample completeness curve (type=2) with confidence intervals (if se=TRUE): see Figs. 1b and 2b in Hsieh et al. (2016). This curve plots the sample coverage with respect to sample size for the same range described in (1).
@@ -489,7 +489,7 @@ ggiNEXT(out, type=2, facet.var="None", color.var="Assemblage", se = TRUE)
 ggiNEXT(out, type=3, facet.var="Order.q", color.var="Assemblage", se =TRUE)
 ```
 
-## Diversity indices (only Symbiotrophs)
+### Diversity indices (only Symbiotrophs)
 
 ```{r}
 
@@ -569,7 +569,7 @@ t1t <- trans_abund$new(dataset = meco_fungi, taxrank = "Trophic_Mode", ntaxa = 1
 t1t$plot_bar(bar_full = FALSE, use_alluvium = TRUE,xtext_keep = TRUE, xtext_angle = 90,facet = "Species",xtext_size = 6, color_values = mycol)
 ```
 
-## Trophic Mode boxplots
+### Trophic Mode boxplots
 
 ```{r}
 scolor<-c("darkorange1","dodgerblue3","hotpink2", "purple4")
@@ -606,9 +606,7 @@ pwc
 
 ```
 
-
-
-## Guild (FunGuild database)
+### Guild (FunGuild database)
 
 ```{r}
 #read info table with the samples without replicates
@@ -635,14 +633,14 @@ t1$plot_bar(bar_full = FALSE, use_alluvium = TRUE,xtext_keep = TRUE, xtext_angle
 
 ```
 
-## Guilds boxplots 
+### Guilds boxplots 
 
 ```{r}
 t1$plot_box(group = "Species", xtext_angle = 30, color_values = scolor) + ylab("Relative abundance (%)") 
 ```
 
 
-## Statistical comparison of Ectomycorrhizal ASVs abundancy
+### Statistical comparison of Ectomycorrhizal ASVs abundancy
 
 ```{r}
 
@@ -660,7 +658,7 @@ pwc
 ```
 
 
-# Statistical comparison of Saprotroph abundancy (-> no diff)
+## Statistical comparison of Saprotroph abundancy (-> no diff)
 ```{r}
 
 shapiro.test(abund[abund$Taxonomy == "Undefined Saprotroph",]$Abundance) # data normally distributed
@@ -687,7 +685,7 @@ TukeyEndoph
 
 
 
-# Comparison of the samples with different Pinus tree age and tree height
+## Comparison of the samples with different Pinus tree age and tree height
 
 
 ### Preparation of datasets
@@ -721,7 +719,7 @@ All_table<-Tax_otu_data
 
 ```
 
-### Pinus trees age distribution 
+### _Pinus_ trees age distribution 
 ```{r}
 
 sample_info_no_R <- read.table("Info_noR.txt", header=T,  check.names=F)
