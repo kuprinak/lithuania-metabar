@@ -1,7 +1,9 @@
 # Lithuania-metabar
 ## Metabarcoding analysis of fungi associated with roots of three plant species: _Diphasiastrum complanatum_, _Pinus sylvestris_ and _Vaccinium myrtillus_
 
-To view any HTML files, please, download them
+> [!TIP]
+> To view any HTML files, please, download them
+
 
 Description of the files:
 
