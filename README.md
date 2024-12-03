@@ -29,9 +29,9 @@ flowchart TB
     C --> V([vsearch]);
     V --> ASV@{shape: procs, label: "ASV_before_filtering.xlsx"};
     V --> CV@{shape: procs, label: "ASV_counts.txt"};
-    ASV --> T([UNITE]);
+    ASV --> T([UNITE v9.0 database]);
     T --> Ta@{shape: procs, label: "Taxonomy.txt"};
-    Ta --> F([FUNGuild]);
+    Ta --> F([FUNGuild v.1.1 database]);
     F --> Gu@{shape: procs, label: "Guilds and trophic modes of taxa"};
     Gu --> rs([rstatix])
     CV --> D([DESeq2]);
@@ -45,4 +45,26 @@ flowchart TB
     Ta --> iN([iNEXT]);
 
 ```
+
+
+## Used programs:
+
+#### Python packages:
+
+* Trimmomatic v0.39 - trimming of adapters, low-quality bases and removing of low-quality reads
+* vsearch v2.15 - merging of forward and reverse reads, quality filtering of reads, dereplication of reads across the samples and removal of singletons, pooling of the samples, denoising of the sequences, identification and removal of chimaera sequences using the UCHIME algorithm, applying both _de novo_ and reference-based detections, assignment of resulting sequences to Amplicon Sequence Variants (ASVs), taxonomical assignment of ASVs
+  
+#### R packages:
+
+* DESeq2 v1.42 - normalization of read counts through variance stabilizing transformation
+* phyloseq v1.41 - Principle Coordinate Analysis
+* microeco v1.4.0 - calculation of taxonomic abundance per sample
+* metacoder v0.3.7 - pairwise comparison of taxonomic abundances
+* iNEXT v3.0.0 - calculation and visualisation of species diversity indices(Hill numbers) per tample type
+* rstatix v0.7.2 - Kruskal-Wallis test with Dunn's post-hoc test for the abundancy of trophic modes and guilds among sample types 
+
+
+
+
+
 
