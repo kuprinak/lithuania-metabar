@@ -15,4 +15,4 @@ Description of the files:
 5. Info.txt - information about the samples including technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), and the part of the studied forest ("Forest").
 6. Info_noR.txt - information about the samples excluding technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), part of the forest ("Forest"), age of the Pinus sylvestris at the location ("Age", years), Height of the Pinus sylvestris at the location ("Height", m), the diameter of the Diphasiastrum complanatum colony ("Diph_colony, m).
 7. Taxonomy.txt - assignment of ASVs to fungi taxa (UNITE database v9.0), trophic mode and guild (FUNGuild v1.1 database): 
-8. multiqc_RawTrimmomatic.html - MultiQC report on the quality of the trimmed reads.
+8. MultiQC_reads_Trimmomatic.html - MultiQC report on the quality of the trimmed reads.
