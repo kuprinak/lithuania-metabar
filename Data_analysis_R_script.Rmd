@@ -1,12 +1,5 @@
----
-title: "Lithuania metabarcoding"
-author: "Kristina Kuprina"
-date: "`r Sys.Date()`"
-output:
-  html_document: default
----
 
-```{r, message= FALSE, warning = FALSE}
+```
 library("phyloseq")
 library("vegan")
 library("DESeq2")
@@ -33,7 +26,8 @@ library('iNEXT')
 ```
 
 ### Reading the data
-```{r, warning = FALSE}
+
+```
 #reading the data
 count_tab <-read.table("ASV_counts_new.txt", header=T, row.names=1, check.names=F)
 sample_info <- read.table("info.txt", header=T, row.names=1, check.names=F)
@@ -53,7 +47,8 @@ head(sample_info)
 ```
 
 ### Treatment of NTC
-```{r, warning =FALSE}
+
+```
 # sum of NTC counts for each ASV
 NTC <-rowSums(count_tab[, 1:7]) 
 
