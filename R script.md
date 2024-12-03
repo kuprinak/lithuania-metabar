@@ -1,7 +1,7 @@
 # Data analysis in R
-## Metabarcoding analysis of fungi associated with roots of three plant species: _Diphasiastrum complanatum_, _Pinus sylvestris_ and _Vaccinium myrtillus_
+## Study: Metabarcoding analysis of fungi associated with roots of three plant species: _Diphasiastrum complanatum_, _Pinus sylvestris_ and _Vaccinium myrtillus_
 
-## Load packages
+### Load packages
 ```
 library("phyloseq")
 library("vegan")
