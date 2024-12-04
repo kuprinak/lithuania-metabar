@@ -1,6 +1,18 @@
-# Lithuania-metabar
-## Metabarcoding analysis of fungi associated with roots of three plant species: _Diphasiastrum complanatum_, _Pinus sylvestris_ and _Vaccinium myrtillus_
+## Metabarcoding analysis of fungi associated with roots of three plant species:  _Diphasiastrum complanatum_, _Pinus sylvestris_ and _Vaccinium myrtillus_
 
+> [!TIP]
+> To view any HTML files, please, download them
+
+### List of files:
+
+* ASV_before_filtering.xlsx - all Amplicon Sequence Variants (ASVs) assigned to the fungi taxa using the UNITY database (before filtering for depth and match).
+* ASV_counts - row number of reads per ASVs per sample.
+* Data_analysis_R_script.Rmd - data analysis is as an R Markdown file.
+* Data_analysis_R_script.html - data analysis as an HTML file results in graphs or tables.
+* Info.txt - information about the samples including technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), and the part of the studied forest ("Forest").
+* Info_noR.txt - information about the samples excluding technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), part of the forest ("Forest"), age of the Pinus sylvestris at the location ("Age", years), Height of the Pinus sylvestris at the location ("Height", m), the diameter of the Diphasiastrum complanatum colony ("Diph_colony, m).
+* Taxonomy.txt - assignment of ASVs to fungi taxa (UNITE database v9.0), trophic mode and guild (FUNGuild v1.1 database): 
+* MultiQC_reads_Trimmomatic.html - MultiQC report on the quality of the trimmed reads.
 
 ## Used programs:
 
@@ -47,20 +59,6 @@ flowchart TB
     Ta --> iN([iNEXT]);
 
 ```
-
-### List of the files:
-
-* ASV_before_filtering.xlsx - all Amplicon Sequence Variants (ASVs) assigned to the fungi taxa using the UNITY database (before filtering for depth and match).
-* ASV_counts - row number of reads per ASVs per sample.
-* Data_analysis_R_script.Rmd - data analysis is as an R Markdown file.
-* Data_analysis_R_script.html - data analysis as an HTML file results in graphs or tables.
-* Info.txt - information about the samples including technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), and the part of the studied forest ("Forest").
-* Info_noR.txt - information about the samples excluding technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), part of the forest ("Forest"), age of the Pinus sylvestris at the location ("Age", years), Height of the Pinus sylvestris at the location ("Height", m), the diameter of the Diphasiastrum complanatum colony ("Diph_colony, m).
-* Taxonomy.txt - assignment of ASVs to fungi taxa (UNITE database v9.0), trophic mode and guild (FUNGuild v1.1 database): 
-* MultiQC_reads_Trimmomatic.html - MultiQC report on the quality of the trimmed reads.
-
-> [!TIP]
-> To view any HTML files, please, download them
 
 
 
