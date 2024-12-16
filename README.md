@@ -5,13 +5,13 @@
 
 ### List of files:
 
-* ASV_before_filtering.xlsx - all Amplicon Sequence Variants (ASVs) assigned to the fungi taxa using the UNITY database (before filtering for depth and match).
-* ASV_counts - row number of reads per ASVs per sample.
+* OTU_before_filtering.xlsx - all Amplicon Sequence Variants (ASVs) assigned to the fungi taxa using the UNITY database (before filtering for depth and match).
+* OTU_counts - row number of reads per OTU per sample.
 * Data_analysis_R_script.Rmd - data analysis is as an R Markdown file.
 * Data_analysis_R_script.html - data analysis as an HTML file results in graphs or tables.
 * Info.txt - information about the samples including technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), and the part of the studied forest ("Forest").
 * Info_noR.txt - information about the samples excluding technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), part of the forest ("Forest"), age of the Pinus sylvestris at the location ("Age", years), Height of the Pinus sylvestris at the location ("Height", m), the diameter of the Diphasiastrum complanatum colony ("Diph_colony, m).
-* Taxonomy.txt - assignment of ASVs to fungi taxa (UNITE database v9.0), trophic mode and guild (FUNGuild v1.1 database): 
+* Taxonomy.txt - assignment of OTUs to fungi taxa (UNITE database v9.0), trophic mode and guild (FUNGuild v1.1 database): 
 * MultiQC_reads_Trimmomatic.html - MultiQC report on the quality of the trimmed reads.
 
 ## Used programs:
@@ -19,7 +19,7 @@
 #### Python packages:
 
 * [Trimmomatic](http://www.usadellab.org/cms/index.php?page=trimmomatic) v0.33 - trimming of adapters, low-quality bases and removing of low-quality reads
-* [VSEARCH](https://peerj.com/articles/2584/) v2.15 - merging of forward and reverse reads, quality filtering of reads, dereplication of reads across the samples and removal of singletons, pooling of the samples, denoising of the sequences, identification and removal of chimaera sequences using the UCHIME algorithm, applying both _de novo_ and reference-based detections, assignment of resulting sequences to Amplicon Sequence Variants (ASVs), taxonomical assignment of ASVs
+* [VSEARCH](https://peerj.com/articles/2584/) v2.15 - merging of forward and reverse reads, quality filtering of reads, dereplication of reads across the samples and removal of singletons, pooling of the samples, denoising of the sequences, identification and removal of chimaera sequences using the UCHIME algorithm, applying both _de novo_ and reference-based detections, clustering of resulting sequences to Operational Taxonomic Units (OTUs), taxonomical assignment of OTUs
 * [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) v0.12.0 and [MultiQC](https://seqera.io/multiqc/) v1.14 -  quality report for trimmed reads
 #### R packages:
 
@@ -41,9 +41,9 @@ flowchart TB
     Fa --> Mu([MultiQC]);
     Mu --> Mur@{shape: procs, label: "MultiQC_reads_Trimmomatic.html"}; 
     C --> V([VSEARCH]);
-    V --> ASV@{shape: procs, label: "ASV_before_filtering.xlsx"};
-    V --> CV@{shape: procs, label: "ASV_counts.txt"};
-    ASV --> T([UNITE v9.0 database]);
+    V --> OTU@{shape: procs, label: "OTU_before_filtering.xlsx"};
+    V --> CV@{shape: procs, label: "OTU_counts.txt"};
+    OTU --> T([UNITE v9.0 database]);
     T --> Ta@{shape: procs, label: "Taxonomy.txt"};
     Ta --> F([FUNGuild v.1.1 database]);
     F --> Gu@{shape: procs, label: "Guilds and trophic modes of taxa"};
