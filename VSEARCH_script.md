@@ -249,3 +249,6 @@ vsearch --usearch_global ./output/OTUs.fasta \
     --strand both \
     --alnout ./output/OTUs.fungi.alignment.fasta
 ```
+
+
+For the FUNGuild search, I run the following command: python3 Guilds_v1.1.py -otu FunGuild_OTU.txt -db fungi 
