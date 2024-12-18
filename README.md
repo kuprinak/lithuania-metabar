@@ -5,7 +5,7 @@
 
 ### List of files:
 
-* OTU_before_filtering.xlsx - all Amplicon Sequence Variants (ASVs) assigned to the fungi taxa using the UNITY database (before filtering for depth and match).
+* OTUs.xlsx - Operational Taxonomic Units (OTUs) assigned to the fungi taxa using the UNITY database.
 * OTU_counts - row number of reads per OTU per sample.
 * Data_analysis_R_script.Rmd - data analysis is as an R Markdown file.
 * Data_analysis_R_script.html - data analysis as an HTML file results in graphs or tables.
@@ -19,7 +19,7 @@
 #### Python packages:
 
 * [Trimmomatic](http://www.usadellab.org/cms/index.php?page=trimmomatic) v0.33 - trimming of adapters, low-quality bases and removing of low-quality reads
-* [VSEARCH](https://peerj.com/articles/2584/) v2.15 - merging of forward and reverse reads, quality filtering of reads, dereplication of reads across the samples and removal of singletons, pooling of the samples, denoising of the sequences, identification and removal of chimaera sequences using the UCHIME algorithm, applying both _de novo_ and reference-based detections, clustering of resulting sequences to Operational Taxonomic Units (OTUs), taxonomical assignment of OTUs
+* [VSEARCH](https://peerj.com/articles/2584/) v2.15 - merging of forward and reverse reads, quality filtering of reads, dereplication of reads across the samples and removal of singletons, pooling of the samples, denoising of the sequences, identification and removal of chimaera sequences using the UCHIME algorithm, applying both _de novo_ and reference-based detections, clustering of resulting sequences to OTUs, taxonomical assignment of OTUs
 * [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) v0.12.0 and [MultiQC](https://seqera.io/multiqc/) v1.14 -  quality report for trimmed reads
 #### R packages:
 
@@ -41,7 +41,7 @@ flowchart TB
     Fa --> Mu([MultiQC]);
     Mu --> Mur@{shape: procs, label: "MultiQC_reads_Trimmomatic.html"}; 
     C --> V([VSEARCH]);
-    V --> OTU@{shape: procs, label: "OTU_before_filtering.xlsx"};
+    V --> OTU@{shape: procs, label: "OTUs.xlsx"};
     V --> CV@{shape: procs, label: "OTU_counts.txt"};
     OTU --> T([UNITE v9.0 database]);
     T --> Ta@{shape: procs, label: "Taxonomy.txt"};
