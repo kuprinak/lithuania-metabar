@@ -239,7 +239,7 @@ vsearch --usearch_global ./output/OTUs.fasta \
     --db $REF.udb \
     --qmask none \
     --dbmask none \
-    --id 0.9 \
+    --id 0.95 \
     --top_hits_only \
     --mincols 250 \
     --maxaccepts 100 \
