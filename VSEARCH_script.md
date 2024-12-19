@@ -252,3 +252,6 @@ vsearch --usearch_global ./output/OTUs.fasta \
 
 
 For the FUNGuild search, I run the following command: python3 Guilds_v1.1.py -otu FunGuild_OTU.txt -db fungi 
+
+"FunGuild tried to assign function to 283 OTUs in 'FunGuild_OTU.txt'.
+ FUNGuild made assignments on 218 OTUs."
