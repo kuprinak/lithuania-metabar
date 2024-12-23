@@ -39,7 +39,7 @@ flowchart TB
     B --> C@{shape: procs, label: "Clean reads (NCBI: PRJNA1185013)"};
     C --> Fa([FastQC]);
     Fa --> Mu([MultiQC]);
-    Mu --> Mur@{shape: procs, label: "MultiQC_reads_Trimmomatic.html"}; 
+    Mu --> Mur@{shape: procs, label: "MultiQC_trimmed_reads.html"}; 
     C --> V([VSEARCH]);
     V --> OTU@{shape: procs, label: "OTUs.xlsx"};
     V --> CV@{shape: procs, label: "OTU_counts.txt"};
