@@ -1,3 +1,17 @@
+# Nextera adapters removal in Trimmomatic
+
+```{bash}
+for f in /home/kuprinak/Diph/RawData/*_R1_001.fastq.gz
+
+do
+    n=${f%%_R1_001.fastq.gz} 
+    trimmomatic PE -threads 96 $1 ${n}_R1_001.fastq.gz  ${n}_R2_001.fastq.gz \
+    ${n}_R1_trimmed.fastq.gz ${n}_R1_unpaired.fastq.gz ${n}_R2_trimmed.fastq.gz \
+    ${n}_R2_unpaired.fastq.gz ILLUMINACLIP:NexteraPE-PE.fa:2:30:10:  \
+    LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:60
+done
+```
+
 # Data Processing in VSEARCH
 
 
