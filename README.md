@@ -6,13 +6,14 @@
 ### List of files:
 
 * OTUs.xlsx - Operational Taxonomic Units (OTUs) assigned to the fungi taxa using the UNITY database.
-* OTU_counts - row number of reads per OTU per sample.
-* Data_analysis_R_script.Rmd - data analysis is as an R Markdown file.
-* Data_analysis_R_script.html - data analysis as an HTML file results in graphs or tables.
+* OTU_counts - row number of reads per OTU in each sample.
 * Info.txt - information about the samples including technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), and the part of the studied forest ("Forest").
 * Info_noR.txt - information about the samples excluding technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), part of the forest ("Forest"), age of the Pinus sylvestris at the location ("Age", years), Height of the Pinus sylvestris at the location ("Height", m), the diameter of the Diphasiastrum complanatum colony ("Diph_colony, m).
-* Taxonomy.txt - assignment of OTUs to fungi taxa (UNITE database v9.0), trophic mode and guild (FUNGuild v1.1 database): 
-* MultiQC_reads_Trimmomatic.html - MultiQC report on the quality of the trimmed reads.
+* Taxonomy.txt - assignment of OTUs to fungi taxa (UNITE database v9.0), trophic mode and guild (FUNGuild v1.1 database).
+* MultiQC_raw_reads.html - MultiQC report on the quality of the raw reads.
+* MultiQC_trimmed_reads.html - MultiQC report on the quality of the trimmed reads.
+* Data_analysis_R_script.Rmd - data analysis is as an R Markdown file.
+* Data_analysis_R_script.html - data analysis as an HTML file results in graphs or tables.
 
 ## Used programs:
 
