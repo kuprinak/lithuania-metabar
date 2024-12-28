@@ -20,7 +20,7 @@
 
 * [Trimmomatic](http://www.usadellab.org/cms/index.php?page=trimmomatic) v0.33 - trimming of adapters, low-quality bases and removing of low-quality reads
 * [VSEARCH](https://peerj.com/articles/2584/) v2.15 - merging of forward and reverse reads, quality filtering of reads, dereplication of reads across the samples and removal of singletons, pooling of the samples, denoising of the sequences, identification and removal of chimaera sequences using the UCHIME algorithm, applying both _de novo_ and reference-based detections, clustering of resulting sequences to OTUs, taxonomical assignment of OTUs
-* [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) v0.12.0 and [MultiQC](https://seqera.io/multiqc/) v1.14 -  quality report for trimmed reads
+* [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) v0.12.0 and [MultiQC](https://seqera.io/multiqc/) v1.14 -  quality reports for raw and trimmed reads
 #### R packages:
 
 * [DESeq2](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8) v1.42 - normalization of read counts through variance stabilizing transformation
@@ -36,10 +36,11 @@
 ```mermaid
 flowchart TB
     A@{shape: procs, label: "Illumina raw reads"} --> B([Trimmomatic]);
+    A --> Fa;
+    Fa --> Mu([MultiQC]);
     B --> C@{shape: procs, label: "Clean reads (NCBI: PRJNA1185013)"};
     C --> Fa([FastQC]);
-    Fa --> Mu([MultiQC]);
-    Mu --> Mur@{shape: procs, label: "MultiQC_trimmed_reads.html"}; 
+    Mu --> Mur@{shape: procs, label: "MultiQC_raw_reads.html, MultiQC_trimmed_reads.html"}; 
     C --> V([VSEARCH]);
     V --> OTU@{shape: procs, label: "OTUs.xlsx"};
     V --> CV@{shape: procs, label: "OTU_counts.txt"};
