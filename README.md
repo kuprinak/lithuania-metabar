@@ -14,6 +14,7 @@
 * MultiQC_trimmed_reads.html - MultiQC report on the quality of the trimmed reads.
 * Data_analysis_R_script.Rmd - data analysis is as an R Markdown file.
 * Data_analysis_R_script.html - data analysis as an HTML file results in graphs or tables.
+* Trimmomatic_VSEARCH_FUNGuild.md - data processing using Trimmomatic, VSEARCH and FUNGuild.
 
 ## Used programs:
 
