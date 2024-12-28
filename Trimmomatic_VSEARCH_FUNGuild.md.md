@@ -1,4 +1,4 @@
-# Nextera adapters removal in Trimmomatic
+# 1. Nextera adapters removal in Trimmomatic
 
 ```{bash}
 for f in /home/kuprinak/Diph/RawData/*_R1_001.fastq.gz
@@ -12,7 +12,7 @@ do
 done
 ```
 
-# Data Processing in VSEARCH
+# 2. Data Processing in VSEARCH
 
 
 ```{bash}
@@ -21,14 +21,14 @@ REF=/home/kuprinak/Diph/DBs/ref.fasta # reference collection of fungi ITS
 CHIMREF=/home/kuprinak/Diph/DBs/uchime.fasta # reference collection of fungi ITS for chimera detection
 ```
 
-### 1. Convert reference sequence databases into binary format
+### 2.1. Convert reference sequence databases into binary format
 
 ```{bash}
 vsearch --makeudb_usearch $REF --dbmask none --output $REF.udb
 vsearch --makeudb_usearch $CHIMREF --dbmask none --output $CHIMREF.udb
 ```
 
-### 2. Process all raw FASTQ files one by one
+### 2.2. Process all raw FASTQ files one by one
 
 >[!IMPORTANT]
 >The commands below start a cycle for each pair of FASTQ files:  
@@ -49,7 +49,7 @@ for f in /home/kuprinak/Diph/DATA/RawTrimmomatic/*_R1_*.fastq.gz; do  # start a 
 	echo Processing sample $s  # The command "Echo" prints into terminal the text that follows it.
 	echo ====================================
 ```
-### 3. Merging of forward and reverse reads
+### 2.3. Merging of forward and reverse reads
 
 ```{bash}
     vsearch --fastq_mergepairs $f \
@@ -80,7 +80,7 @@ for f in /home/kuprinak/Diph/DATA/RawTrimmomatic/*_R1_*.fastq.gz; do  # start a 
     echo Quality filtering
 ```
 
-### 4. Remove low-quality reads from the samples
+### 2.4. Remove low-quality reads from the samples
     
 ```{bash}
     vsearch --fastq_filter ./output/$s.merged.fastq \
@@ -101,7 +101,7 @@ for f in /home/kuprinak/Diph/DATA/RawTrimmomatic/*_R1_*.fastq.gz; do  # start a 
   * fasta_width - length of the lines for the ouptut FASTA file. 0 = no line splitting
   * fastq_stripleft/stripright - how many characters to strip from both ends to remove primer regions.
     
- ### 5. Sequence dereplication
+ ### 2.5. Sequence dereplication
  
 ```{bash}
     vsearch --derep_fulllength ./output/$s.filtered.fasta \
@@ -124,7 +124,7 @@ done
 >[!IMPORTANT]
 > END of the cycle
     
-### 6. Pool all samples together and dereplicate globally
+### 2.6. Pool all samples together and dereplicate globally
  
 #### Merge all sample
 
@@ -151,7 +151,7 @@ echo Unique non-singleton sequences: $(grep -c "^>" ./output/all.derep.fasta)
 * minuniquesize - minimum allowed abundance of sequence. If 2, all singletons will be removed. 
 * sizein - sequence abundance information stored in the sequence name will be taken into account
   
-### 7. Preclustering
+### 2.7. Preclustering
 
 The resulting sequences are sorted by abundance (most abundant go first).
 
@@ -169,7 +169,7 @@ vsearch --cluster_size ./output/all.derep.fasta \
 echo Unique sequences after preclustering: $(grep -c "^>" ./output/preclustered.fasta)
 ```
 
-### 8. Chimera detection
+### 2.8. Chimera detection
 
 Two chimera detection algorithms will be applied:
 * De novo chimera detection - based on comparison of analyzed sequences with each other;
@@ -199,7 +199,7 @@ echo Unique sequences after reference-based chimera detection: $(grep -c "^>" ./
 
 ```
 
-### 9. Clustering sequences to OTUs (greedy clustering)
+### 2.9. Clustering sequences to OTUs (greedy clustering)
 
 ```{bash}
 vsearch --cluster_size ./output/nonchimeras.fasta \
@@ -217,7 +217,7 @@ echo resulting OTUs: $(grep -c "^>" ./output/OTUs.fasta)
 
 ```
 
-### 10. Map sequences to OTUs by searching
+### 2.10. Map sequences to OTUs by searching
 
 ```{bash}
 vsearch --usearch_global ./output/all.fasta \
@@ -240,7 +240,7 @@ sort -k1.4n ./output/OTUtable.txt > ./output/OTUtable.sorted.txt # -k1.4 means s
 * id - sequence similarity threshold (from 0 to 1)
 * otutabout - path for the output OTU table in TSV format
   
-### 11. Searching OTUs across reference sequence database
+### 2.11. Searching OTUs across reference sequence database
 
  OTUs will be compared with reference sequences and results written into a table:   | OTU | Reference | Similarity |  
 
@@ -264,7 +264,7 @@ vsearch --usearch_global ./output/OTUs.fasta \
     --alnout ./output/OTUs.fungi.alignment.fasta
 ```
 
-# FUNGuld search
+# 3. FUNGuld search
 
 ```{bash}
 python3 Guilds_v1.1.py -otu FunGuild_OTU.txt -db fungi 
