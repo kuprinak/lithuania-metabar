@@ -12,7 +12,7 @@
 * Taxonomy.txt - assignment of OTUs to fungi taxa (UNITE database v9.0), trophic modes and functional guilds (FUNGuild v1.1 database).
 * MultiQC_raw_reads.html - MultiQC report on the quality of the raw reads.
 * MultiQC_trimmed_reads.html - MultiQC report on the quality of the trimmed reads.
-* Data_analysis_R_script.html - data analysis in R with the output.
+* Data_analysis_in_R.html - data analysis in R with the output.
 
 ## Used programs:
 
