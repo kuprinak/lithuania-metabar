@@ -7,7 +7,7 @@
 
 * Bioinformatic steps in bash.md - script for sequence data processing using Trimmomatic, VSEARCH and FUNGuild.
 * Raw_Counts - row number of reads per OTU in each sample.
-* Sample_Info.txt - information about the samples including technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), and the part of the studied forest ("Forest").
+* Sample_Info.txt - information about the samples including technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location").
 * Sample_Info_noR.txt - information about the samples excluding technical replicates: sample name ("Sample"), sample type ("Species"), sampling site ("Location"), part of the forest ("Forest"), age of the Pinus sylvestris at the location ("Age", years), Height of the Pinus sylvestris at the location ("Height", m), the diameter of the Diphasiastrum complanatum colony ("Diph_colony, m).
 * Taxonomy.txt - assignment of OTUs to fungi taxa (UNITE database v9.0), trophic modes and functional guilds (FUNGuild v1.1 database).
 * MultiQC_raw_reads.html - MultiQC report on the quality of the raw reads.
