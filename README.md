@@ -23,11 +23,11 @@
 * [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) v0.12.0 and [MultiQC](https://seqera.io/multiqc/) v1.14 -  quality reports for raw and trimmed reads
 #### R packages:
 
-* [DESeq2](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8) v1.42 - normalization of read counts through variance stabilizing transformation
-* [phyloseq](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0061217) v1.41 - Principle Coordinate Analysis
-* [microeco](https://academic.oup.com/femsec/article/doi/10.1093/femsec/fiaa255/6041020?login=true) v1.4.0 - calculation of taxonomic abundance per sample
+* [DESeq2](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8) v1.46 - normalization of read counts through variance stabilizing transformation
+* [phyloseq](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0061217) v1.50 - Principle Coordinate Analysis
+* [microeco](https://academic.oup.com/femsec/article/doi/10.1093/femsec/fiaa255/6041020?login=true) v1.11.0 - calculation of taxonomic abundance per sample
 * [metacoder](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005404) v0.3.7 - pairwise comparison of taxonomic abundances
-* [iNEXT](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12613) v3.0.0 - calculation and visualisation of species diversity indices (Hill numbers) per tample type
+* [iNEXT](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12613) v3.0.1 - calculation and visualisation of species diversity indices (Hill numbers) per tample type
 * [rstatix](https://github.com/kassambara/rstatix) v0.7.2 - Kruskal-Wallis test with Dunn's post-hoc test for the abundancy of trophic modes and guilds among sample types 
 
 
