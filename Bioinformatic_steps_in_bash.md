@@ -1,3 +1,6 @@
+Analysis was performed on The "High Performance Computing" (HPC) cluster of the University Greifswald, which consists of 78 pure computing nodes @3.0 GHz with 64 GB RAM each and managed by SLURM system
+
+
 # 1. Nextera adapters removal in Trimmomatic
 
 ```{bash}
