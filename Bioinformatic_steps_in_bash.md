@@ -1,5 +1,10 @@
-Analysis was performed on The "High Performance Computing" (HPC) cluster of the University Greifswald, which consists of 78 pure computing nodes @3.0 GHz with 64 GB RAM each and managed by SLURM system
 
+## Environment information:
+
+Analysis was performed on The "High Performance Computing" (HPC) cluster of the University Greifswald, 
+which consists of 78 pure computing nodes @3.0 GHz with 64 GB RAM each and managed by SLURM system with the installed:
+
+conda 23.9.0 and Python 3.9.16
 
 # 1. Nextera adapters removal in Trimmomatic
 
