@@ -38,7 +38,7 @@ flowchart TB
     A@{shape: procs, label: "Illumina raw reads"} --> B([Trimmomatic]);
     A --> Fa;
     Fa --> Mu([MultiQC]);
-    B --> C@{shape: procs, label: "Clean reads (NCBI: PRJNA1185013)"};
+    B --> C@{shape: procs, label: "Trimmed reads (NCBI: PRJNA1185013)"};
     C --> Fa([FastQC]);
     Mu --> Mur@{shape: procs, label: "MultiQC_raw_reads.html, MultiQC_trimmed_reads.html"}; 
     C --> V([VSEARCH]);
