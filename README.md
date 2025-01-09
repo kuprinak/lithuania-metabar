@@ -43,9 +43,8 @@ flowchart TB
     C --> Fa([FastQC]);
     Mu --> Mur@{shape: procs, label: "MultiQC_raw_reads.html, MultiQC_trimmed_reads.html"}; 
     C --> V([VSEARCH]);
-    V --> OTU@{shape: procs, label: "OTUs.xlsx"};
-    V --> CV@{shape: procs, label: "OTU_counts.txt"};
-    OTU --> T([UNITE v9.0 database]);
+    V --> T([UNITE v9.0 database]);
+    T --> CV@{shape: procs, label: "Raw_Counts.txt"};
     T --> Ta@{shape: procs, label: "Taxonomy.txt"};
     Ta --> F([FUNGuild v.1.1 database]);
     F --> Gu@{shape: procs, label: "Guilds and trophic modes of taxa"};
