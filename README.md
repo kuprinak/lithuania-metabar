@@ -1,4 +1,5 @@
 ## Metabarcoding analysis of fungi associated with roots of three plant species:  _Diphasiastrum complanatum_, _Pinus sylvestris_ and _Vaccinium myrtillus_
+#### Results are published here: https://doi.org/10.1016/j.rhisph.2025.101053
 
 > [!TIP]
 > To view any HTML file, please, download it
